@@ -12,7 +12,9 @@ ENV CATALINA_SH   /usr/share/tomcat7/bin/catalina.sh
 ENV CATALINA_TMPDIR /tmp/tomcat7-tomcat7-tmp
 
 RUN mkdir -p $CATALINA_TMPDIR
+
 ADD libsigar-amd64-linux.so /usr/lib
+ADD WebCpuInfo.war /var/lib/tomcat7/webapps
 
 VOLUME ["/var/lib/tomcat7/webapps/"]
 
