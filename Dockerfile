@@ -17,6 +17,6 @@ ADD libsigar-amd64-linux.so /usr/lib
 ADD WebCpuInfo.war /var/lib/tomcat7/webapps
 
 VOLUME ["/var/lib/tomcat7/webapps/"]
-ENTRYPOINT /usr/share/tomcat7/bin/startup.sh
 
 EXPOSE 8080 9000
+ENTRYPOINT ["/usr/share/tomcat7/bin/catalina.sh","run"]
