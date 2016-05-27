@@ -1,9 +1,9 @@
 FROM ubuntu:14.04
-MAINTAINER xjpdocker<jsxiejp@163.com>
+MAINTAINER "xjpdocker<jsxiejp@163.com>"
 ENV REFRESHED_AT 2016-5-20
 
-RUN apt-get -yqq update
-RUN apt-get -yqq install tomcat7 default-jdk
+RUN apt-get update
+RUN apt-get install -y tomcat7 default-jdk
 
 ENV CATALINA_HOME /usr/share/tomcat7
 ENV CATALINA_BASE /var/lib/tomcat7
@@ -17,5 +17,6 @@ ADD libsigar-amd64-linux.so /usr/lib
 ADD WebCpuInfo.war /var/lib/tomcat7/webapps
 
 VOLUME ["/var/lib/tomcat7/webapps/"]
+ENTRYPOINT /usr/share/tomcat7/bin/startup.sh
 
 EXPOSE 8080 9000
