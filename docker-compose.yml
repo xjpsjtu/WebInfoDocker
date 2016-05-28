@@ -1,0 +1,13 @@
+#docker-compose.yml
+version: '2'
+services:
+  cpuinfo_a:
+    image: "registry.aliyuncs.com/xjpdocker/webcpuinfo:latest"
+    ports:
+      - "8017:8080"
+  cpuinfo_b:
+    image: "registry.aliyuncs.com/xjpdocker/webcpuinfo:latest"
+    depends_on:
+      - cpuinfo_a
+    ports: 
+      - "8018:8080"
