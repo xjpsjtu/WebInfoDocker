@@ -2,8 +2,8 @@ FROM ubuntu:14.04
 MAINTAINER "xjpdocker<jsxiejp@163.com>"
 ENV REFRESHED_AT 2016-5-20
 
-RUN apt-get update
-RUN apt-get install -y tomcat7 default-jdk
+RUN apt-get -yqq update
+RUN apt-get install -yqq tomcat7 default-jdk
 
 ENV CATALINA_HOME /usr/share/tomcat7
 ENV CATALINA_BASE /var/lib/tomcat7
